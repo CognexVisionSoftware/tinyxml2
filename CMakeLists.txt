@@ -6,7 +6,11 @@ IF(BIICODE)
     RETURN()
 ENDIF(BIICODE)
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-cmake_policy(VERSION 2.6)
+
+if (NOT (CMAKE_VERSION VERSION_LESS 3.14))
+  cmake_policy(VERSION 3.14)
+endif()
+
 if(POLICY CMP0063)
 	cmake_policy(SET CMP0063 OLD)
 endif()
